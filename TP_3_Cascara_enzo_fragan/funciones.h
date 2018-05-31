@@ -9,8 +9,11 @@ typedef struct{
     char descripcion[50];
     int puntaje;
     char linkImagen[500];
+    int estado;
+    int id;
 }EMovie;
 
+void inicio(EMovie* ,int );
 
 /**
  *  Agrega una pelicula al archivo binario

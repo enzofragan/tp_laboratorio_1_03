@@ -10,7 +10,7 @@ int main()
     char seguir='s';
     int opcion=0;
     EMovie peli[tam];
-
+    inicio(&peli,tam);
     while(seguir=='s')
     {
         printf("1- Agregar pelicula\n");
