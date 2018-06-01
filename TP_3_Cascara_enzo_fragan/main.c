@@ -13,6 +13,7 @@ int main()
     inicio(&peli,tam);
     while(seguir=='s')
     {
+        mostrar(&peli, tam);
         printf("1- Agregar pelicula\n");
         printf("2- Borrar pelicula\n");
         printf("3- Modificar pelicula\n");

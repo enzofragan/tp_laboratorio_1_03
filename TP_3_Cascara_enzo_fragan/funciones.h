@@ -13,14 +13,17 @@ typedef struct{
     int id;
 }EMovie;
 
-void inicio(EMovie* ,int );
+int inicio(EMovie* ,int);
+int libre(EMovie* ,int);
+int mostrarUno(EMovie* );
+int mostrar(EMovie* ,int);
 
 /**
  *  Agrega una pelicula al archivo binario
  *  @param movie la estructura a ser agregada al archivo
  *  @return retorna 1 o 0 de acuerdo a si pudo agregar la pelicula o no
  */
-int agregarPelicula(EMovie movie);
+int agregarPelicula(EMovie* ,tam);
 
 /**
  *  Borra una pelicula del archivo binario
