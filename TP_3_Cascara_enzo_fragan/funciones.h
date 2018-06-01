@@ -14,7 +14,7 @@ typedef struct{
 }EMovie;
 
 int inicio(EMovie* ,int);
-int libre(EMovie* ,int);
+int libre(EMovie* ,int,int*);
 int mostrarUno(EMovie* );
 int mostrar(EMovie* ,int);
 
@@ -23,7 +23,7 @@ int mostrar(EMovie* ,int);
  *  @param movie la estructura a ser agregada al archivo
  *  @return retorna 1 o 0 de acuerdo a si pudo agregar la pelicula o no
  */
-int agregarPelicula(EMovie* ,tam);
+int agregarPelicula(EMovie* ,int);
 
 /**
  *  Borra una pelicula del archivo binario

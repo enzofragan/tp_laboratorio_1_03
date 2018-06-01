@@ -26,11 +26,9 @@ int inicio(EMovie* peli,int tama)
     return retorno;
 }
 
-int libre(EMovie* peli,int tam)
+int libre(EMovie* peli,int tam,int* retorno)
 {
     int i;
-    int* retorno;
-    retorno = -1;
 
     for(i=0;i<tam;i++)
     {
@@ -73,7 +71,32 @@ int mostrar(EMovie* peli,int tam)
     return retorno;
 }
 
-int agregarPelicula(EMovie* peli)
+int agregarPelicula(EMovie* peli,int tam)
 {
+    int i;
+    int indice=-1;
+    int retorno=0;
 
+    i=libre(&peli,tam,&indice);
+
+    if(peli!=NULL && tam>0 && i!=-1)
+    {
+        retorno=1;
+        printf("ingrese el titulo: ");
+        fflush(stdin);
+        scanf("%s",(peli+indice)->titulo);
+
+        printf("ingrese el genero: ");
+        fflush(stdin);
+        scanf("%s",(peli+indice)->genero);
+
+        printf("ingrese la duracion: ");
+        fflush(stdin);
+        scanf("%d",&(peli+indice)->duracion);
+
+        (peli+indice)->estado=0;
+
+        mostrarUno((peli+indice));
+    }
+    return retorno;
 }

@@ -25,6 +25,7 @@ int main()
         switch(opcion)
         {
             case 1:
+                agregarPelicula(&peli,tam);
                 break;
             case 2:
                 break;
