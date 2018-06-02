@@ -14,9 +14,10 @@ typedef struct{
 }EMovie;
 
 int inicio(EMovie* ,int);
-int libre(EMovie* ,int,int*);
+int libre(EMovie* ,int);
 int mostrarUno(EMovie* );
 int mostrar(EMovie* ,int);
+int idAutoInc(EMovie* ,int);
 
 /**
  *  Agrega una pelicula al archivo binario

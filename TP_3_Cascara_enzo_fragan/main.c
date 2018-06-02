@@ -15,10 +15,11 @@ int main()
     {
         mostrar(&peli, tam);
         printf("1- Agregar pelicula\n");
-        printf("2- Borrar pelicula\n");
-        printf("3- Modificar pelicula\n");
-        printf("4- Generar pagina web\n");
-        printf("5- Salir\n");
+        printf("2- Agregar pelicula\n");
+        printf("3- Borrar pelicula\n");
+        printf("4- Modificar pelicula\n");
+        printf("5- Generar pagina web\n");
+        printf("6- Salir\n");
 
         scanf("%d",&opcion);
 
@@ -28,12 +29,13 @@ int main()
                 agregarPelicula(&peli,tam);
                 break;
             case 2:
+                mostrar(&peli,tam);
                 break;
             case 3:
                break;
             case 4:
                break;
-            case 5:
+            case 6:
                 seguir = 'n';
                 break;
         }

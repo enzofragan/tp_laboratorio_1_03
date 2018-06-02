@@ -26,16 +26,20 @@ int inicio(EMovie* peli,int tama)
     return retorno;
 }
 
-int libre(EMovie* peli,int tam,int* retorno)
+int libre(EMovie* peli,int tam)
 {
+    int retorno = -1;
     int i;
-
-    for(i=0;i<tam;i++)
+    if(tam > 0 && peli != NULL)
     {
-        if((peli+i)->estado==1 && (peli+i)!=NULL)
+        retorno = -2;
+        for(i=0;i<tam;i++)
         {
-            *(retorno)=i;
-            break;
+            if((peli+i)->estado == 1)
+            {
+                retorno = i;
+                break;
+            }
         }
     }
     return retorno;
@@ -76,27 +80,76 @@ int agregarPelicula(EMovie* peli,int tam)
     int i;
     int indice=-1;
     int retorno=0;
+    int id;
+    int auxDu;
+    int auxP;
+    char auxT[20];
+    char auxG[20];
+    char auxD[20];
+    char auxL[500];
 
-    i=libre(&peli,tam,&indice);
+    i=libre(&peli,tam);
 
     if(peli!=NULL && tam>0 && i!=-1)
     {
+        id=idAutoInc(&peli,tam);
         retorno=1;
         printf("ingrese el titulo: ");
         fflush(stdin);
-        scanf("%s",(peli+indice)->titulo);
+        gets(auxT);
 
         printf("ingrese el genero: ");
         fflush(stdin);
-        scanf("%s",(peli+indice)->genero);
+        gets(auxG);
 
         printf("ingrese la duracion: ");
         fflush(stdin);
-        scanf("%d",&(peli+indice)->duracion);
+        scanf("%d",&auxDu);
+
+        printf("ingrese el descripcion: ");
+        fflush(stdin);
+        gets(auxD);
+
+        printf("ingrese la puntuacion: ");
+        fflush(stdin);
+        scanf("%d",&auxP);
+
+        printf("ingrese el link de la portada: ");
+        fflush(stdin);
+        gets(auxL);
 
         (peli+indice)->estado=0;
+        (peli+indice)->id=id;
+        (peli+indice)->duracion=auxDu;
+        (peli+indice)->puntaje=auxP;
+        strcpy((peli+indice)->titulo,auxT);
+        strcpy((peli+indice)->genero,auxG);
+        strcpy((peli+indice)->descripcion,auxD);
+        strcpy((peli+indice)->linkImagen,auxL);
 
         mostrarUno((peli+indice));
     }
     return retorno;
+}
+
+int idAutoInc(EMovie* peli,int tam)
+{
+    int retorno = 0;
+    int i;
+    if(tam > 0 && peli != NULL)
+    {
+        for(i=0; i<tam; i++)
+        {
+            if((peli+i)->estado == 0)
+            {
+                    if((peli+i)->id<i)
+                    {
+                         retorno=(peli+i)->id;
+                    }
+
+            }
+        }
+    }
+
+    return retorno+1;
 }
