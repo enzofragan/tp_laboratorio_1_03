@@ -11,9 +11,10 @@ int main()
     int opcion=0;
     EMovie peli[tam];
     inicio(&peli,tam);
+
+    idAutoInc(peli,100);
     while(seguir=='s')
     {
-        mostrar(&peli, tam);
         printf("1- Agregar pelicula\n");
         printf("2- Agregar pelicula\n");
         printf("3- Borrar pelicula\n");
@@ -26,10 +27,10 @@ int main()
         switch(opcion)
         {
             case 1:
-                agregarPelicula(&peli,tam);
+                agregarPelicula(peli,tam);
                 break;
             case 2:
-                mostrar(&peli,tam);
+                mostrar(peli,tam);
                 break;
             case 3:
                break;

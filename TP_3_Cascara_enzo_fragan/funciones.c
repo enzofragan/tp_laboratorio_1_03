@@ -88,11 +88,11 @@ int agregarPelicula(EMovie* peli,int tam)
     char auxD[20];
     char auxL[500];
 
-    i=libre(&peli,tam);
+    i=libre(peli,tam);
 
     if(peli!=NULL && tam>0 && i!=-1)
     {
-        id=idAutoInc(&peli,tam);
+        id=idAutoInc(peli,tam);
         retorno=1;
         printf("ingrese el titulo: ");
         fflush(stdin);
@@ -118,16 +118,16 @@ int agregarPelicula(EMovie* peli,int tam)
         fflush(stdin);
         gets(auxL);
 
-        (peli+indice)->estado=0;
-        (peli+indice)->id=id;
-        (peli+indice)->duracion=auxDu;
-        (peli+indice)->puntaje=auxP;
-        strcpy((peli+indice)->titulo,auxT);
-        strcpy((peli+indice)->genero,auxG);
-        strcpy((peli+indice)->descripcion,auxD);
-        strcpy((peli+indice)->linkImagen,auxL);
+        (peli+i)->estado=0;
+        (peli+i)->id=id;
+        (peli+i)->duracion=auxDu;
+        (peli+i)->puntaje=auxP;
+        strcpy((peli+i)->titulo,auxT);
+        strcpy((peli+i)->genero,auxG);
+        strcpy((peli+i)->descripcion,auxD);
+        strcpy((peli+i)->linkImagen,auxL);
 
-        mostrarUno((peli+indice));
+        mostrarUno((peli+i));
     }
     return retorno;
 }
@@ -142,14 +142,9 @@ int idAutoInc(EMovie* peli,int tam)
         {
             if((peli+i)->estado == 0)
             {
-                    if((peli+i)->id<i)
-                    {
-                         retorno=(peli+i)->id;
-                    }
-
+                retorno=(peli+i)->id;
             }
         }
     }
-
     return retorno+1;
 }
