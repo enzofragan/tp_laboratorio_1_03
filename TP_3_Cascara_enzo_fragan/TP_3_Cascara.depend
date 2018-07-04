@@ -1,17 +1,18 @@
 # depslib dependency file v1.0
-1530656076 source:c:\users\administrador\desktop\tp_laboratorio_1_03\tp_3_cascara_enzo_fragan\main.c
+1530734382 source:c:\users\administrador\desktop\tp_laboratorio_1_03\tp_3_cascara_enzo_fragan\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"funciones.h"
 
-1530649491 c:\users\administrador\desktop\tp_laboratorio_1_03\tp_3_cascara_enzo_fragan\funciones.h
+1530734287 c:\users\administrador\desktop\tp_laboratorio_1_03\tp_3_cascara_enzo_fragan\funciones.h
 
-1530655994 source:c:\users\administrador\desktop\tp_laboratorio_1_03\tp_3_cascara_enzo_fragan\funciones.c
+1530734822 source:c:\users\administrador\desktop\tp_laboratorio_1_03\tp_3_cascara_enzo_fragan\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<conio.h>
 	<ctype.h>
 	"funciones.h"
 

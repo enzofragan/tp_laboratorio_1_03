@@ -18,6 +18,14 @@ int libre(EMovie* ,int);
 int mostrarUno(EMovie* );
 int mostrar(EMovie* ,int);
 int idAutoInc(EMovie* ,int);
+int letraV(char []);
+int numeroV(char []);
+int guardarEnArchivo(EMovie* ,int);
+int cargarDesdeArchivo(EMovie* ,int);
+int buscarId(EMovie* ,int);
+int baja(EMovie* ,int);
+int modificar(EMovie* ,int);
+
 
 /**
  *  Agrega una pelicula al archivo binario

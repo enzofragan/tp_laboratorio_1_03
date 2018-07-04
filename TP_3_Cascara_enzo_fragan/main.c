@@ -12,11 +12,12 @@ int main()
     EMovie peli[tam];
     inicio(&peli,tam);
 
-    idAutoInc(peli,100);
+    cargarDesdeArchivo(peli,tam);
+
     while(seguir=='s')
     {
         printf("1- Agregar pelicula\n");
-        printf("2- Agregar pelicula\n");
+        printf("2- Mostrar peliculas\n");
         printf("3- Borrar pelicula\n");
         printf("4- Modificar pelicula\n");
         printf("5- Generar pagina web\n");
@@ -33,9 +34,11 @@ int main()
                 mostrar(peli,tam);
                 break;
             case 3:
-               break;
+                baja(peli,tam);
+                break;
             case 4:
-               break;
+                modificar(peli,tam);
+                break;
             case 6:
                 seguir = 'n';
                 break;
