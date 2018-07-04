@@ -197,16 +197,16 @@ int buscarId(EMovie* peli,int tamanio)
 {
     int id;
     int i;
-    int retorno=0;
+    int retorno=-1;
 
 	printf("Ingrese id a dar de baja: ");
 	scanf("%d", &id);
 
 	for(i=0; i<tamanio; i++)
 	{
-		if(id==(peli+i)->id)
+		if((peli+i)->id==id)
 		{
-            retorno=id;
+            retorno=i;
 		}
 	}
 	return retorno;
@@ -214,7 +214,7 @@ int buscarId(EMovie* peli,int tamanio)
 
 int baja(EMovie* peli,int tamanio)
 {
-    int i;
+    int i=0;
 	char opcion;
 	int ret=0;
 
